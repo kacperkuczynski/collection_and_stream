@@ -1,6 +1,4 @@
-package kolekcja.sety;
-
-import kolekcja.lista.arrayLista.Cars;
+package kolekcja.sety.hashSety;
 
 import java.util.*;
 
@@ -92,5 +90,6 @@ public class Car {
         //empty hash set
         carsHashSet.removeAll(carsHashSet);
         System.out.println("Car HashSet is empy: " + carsHashSet.isEmpty());
+
     }
 }

@@ -2,12 +2,12 @@ package kolekcja.lista.arrayLista;
 
 import java.util.*;
 
-public class Cars {
+public class Car {
     private String brand;
     private String model;
     private int power;
 
-    public Cars(String brand, String model, int power) {
+    public Car(String brand, String model, int power) {
         this.brand = brand;
         this.model = model;
         this.power = power;
@@ -33,10 +33,10 @@ public class Cars {
     public int getPower() {
         return power;
     }
-    public static Comparator<Cars> CarBrandComparator = new Comparator<Cars>() {
+    public static Comparator<Car> CarBrandComparator = new Comparator<Car>() {
 
         // Comparing brand of cars
-        public int compare(Cars c1, Cars c2) {
+        public int compare(Car c1, Car c2) {
             String CarBrand1
                     = c1.getBrand().toUpperCase();
             String CarBrand2
@@ -52,10 +52,10 @@ public class Cars {
         }
     };
     //Comparing car power
-    public static Comparator<Cars> CarPowerComparator = new Comparator<Cars>() {
+    public static Comparator<Car> CarPowerComparator = new Comparator<Car>() {
 
         // Method
-        public int compare(Cars c1, Cars c2) {
+        public int compare(Car c1, Car c2) {
 
             int power1 = c1.getPower();
             int power2 = c2.getPower();
@@ -68,31 +68,31 @@ public class Cars {
         }
     };
     public static void main(String[] args) {
-        List<Cars> carsArrayList = new ArrayList<Cars>();//new ArrayList
+        List<Car> carsArrayList = new ArrayList<Car>();//new ArrayList
         //adding elements
-        carsArrayList.add(new Cars("FORD","MONDEO", 110));
-        carsArrayList.add(new Cars("BMW","X3", 100));
-        carsArrayList.add(new Cars("VW","GOLF", 120));
+        carsArrayList.add(new Car("FORD","MONDEO", 110));
+        carsArrayList.add(new Car("BMW","X3", 100));
+        carsArrayList.add(new Car("VW","GOLF", 120));
 
         //print out
         System.out.println("Print out collection " + carsArrayList);
         System.out.println();
         //iterate out
-        for(Cars cars:carsArrayList){
-            System.out.println("Iterate colection " + cars);
+        for(Car car :carsArrayList){
+            System.out.println("Iterate colection " + car);
         }
         System.out.println();
 
         //insert element at the first and fifth position
-        carsArrayList.add(0,new Cars("RENAULT", "MEGANE", 50));
-        carsArrayList.add(4,new Cars("VOLVO", "XC30", 80));
+        carsArrayList.add(0,new Car("RENAULT", "MEGANE", 50));
+        carsArrayList.add(4,new Car("VOLVO", "XC30", 80));
 
         //print out
         System.out.println("After insert 2 elements " + carsArrayList);
         System.out.println();
 
         //retive element at the specify index
-        Cars element;
+        Car element;
         element = carsArrayList.get(3);
         System.out.println("Retrive element at the specify index " + element);
         element = carsArrayList.get(4);
@@ -100,8 +100,8 @@ public class Cars {
         System.out.println();
 
         //update specific array element by given element
-        carsArrayList.set(0, new Cars("AUDI","A4", 110));
-        carsArrayList.set(1, new Cars("KIA","SPORT",180));
+        carsArrayList.set(0, new Car("AUDI","A4", 110));
+        carsArrayList.set(1, new Car("KIA","SPORT",180));
 
         //print out
         System.out.println("After update " + carsArrayList);
@@ -115,60 +115,60 @@ public class Cars {
         System.out.println();
 
         //search an element in arrayList
-        for (Cars cars: carsArrayList){
-            if (cars.getModel().contains("GOLF")){
-                System.out.println("Found it! This is GOLF! brand = " + cars.getBrand());
+        for (Car car : carsArrayList){
+            if (car.getModel().contains("GOLF")){
+                System.out.println("Found it! This is GOLF! brand = " + car.getBrand());
             }
         }
         System.out.println();
 
         //sorting by car brand
-        Collections.sort(carsArrayList, Cars.CarBrandComparator);
+        Collections.sort(carsArrayList, Car.CarBrandComparator);
 
         System.out.println("Iterate collection sorting by brand");
         //iterate out
-        for(Cars cars:carsArrayList){
-            System.out.println(cars);
+        for(Car car :carsArrayList){
+            System.out.println(car);
         }
         System.out.println();
 
         //sorting by car power
-        Collections.sort(carsArrayList, Cars.CarPowerComparator);
+        Collections.sort(carsArrayList, Car.CarPowerComparator);
 
         System.out.println("Iterate collection sorting by power");
         //iterate out
-        for(Cars cars:carsArrayList){
-            System.out.println(cars);
+        for(Car car :carsArrayList){
+            System.out.println(car);
         }
         System.out.println();
 
         System.out.println("Copied first arrayList to second arrayList");
         //new ArrayList
-        List<Cars> anotherCarsArrayList = new ArrayList<Cars>();
+        List<Car> anotherCarArrayList = new ArrayList<Car>();
 
         //method copy
-        anotherCarsArrayList.addAll(carsArrayList);
+        anotherCarArrayList.addAll(carsArrayList);
 
         System.out.println("Copied arrayList");
-        for(Cars cars:anotherCarsArrayList){
-            System.out.println(cars);
+        for(Car car : anotherCarArrayList){
+            System.out.println(car);
         }
         System.out.println();
 
         System.out.println("Original arrayList");
-        for(Cars cars:carsArrayList){
-            System.out.println(cars);
+        for(Car car :carsArrayList){
+            System.out.println(car);
         }
         System.out.println();
 
         //Random class to shuffle arrayList
         Random r1 = new Random();
         //method shuffle
-        Collections.shuffle(anotherCarsArrayList, r1);
+        Collections.shuffle(anotherCarArrayList, r1);
 
         System.out.println("Shuffled arrayList by Random class");
-        for(Cars cars:anotherCarsArrayList){
-            System.out.println(cars);
+        for(Car car : anotherCarArrayList){
+            System.out.println(car);
         }
         System.out.println();
     }

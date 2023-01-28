@@ -2,14 +2,13 @@ package kolekcja.lista.linkedLista;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Objects;
 
-public class Dogs {
+public class Dog {
     private String breed;
     private int age;
     private boolean longHair;
 
-    public Dogs(String breed, int age, boolean longHair) {
+    public Dog(String breed, int age, boolean longHair) {
         this.breed = breed;
         this.age = age;
         this.longHair = longHair;
@@ -24,7 +23,7 @@ public class Dogs {
                 '}';
     }
     //iterator linkedList
-    public static void usingIterator(LinkedList<Dogs> dogsLinkedList){
+    public static void usingIterator(LinkedList<Dog> dogsLinkedList){
         Iterator itr = dogsLinkedList.iterator();
         while(itr.hasNext()){
             System.out.println(itr.next());
@@ -32,7 +31,7 @@ public class Dogs {
         System.out.println();
     }
     //iterator linkedList starting at the specified position.
-    public static void usingSpecifyIterator(LinkedList<Dogs> dogsLinkedList, int p){
+    public static void usingSpecifyIterator(LinkedList<Dog> dogsLinkedList, int p){
         Iterator itr = dogsLinkedList.listIterator(p);
         while(itr.hasNext()){
             System.out.println(itr.next());
@@ -40,7 +39,7 @@ public class Dogs {
         System.out.println();
     }
     //iterator linkedList starting in reverse order.
-    public static void usingReverseIterator(LinkedList<Dogs> dogsLinkedList){
+    public static void usingReverseIterator(LinkedList<Dog> dogsLinkedList){
         Iterator itr = dogsLinkedList.descendingIterator();
         while(itr.hasNext()){
             System.out.println(itr.next());
@@ -49,17 +48,17 @@ public class Dogs {
     }
 
     public static void main(String[] args) {
-        LinkedList<Dogs> dogsLinkedList = new LinkedList<Dogs>();//new linkedList
+        LinkedList<Dog> dogsLinkedList = new LinkedList<Dog>();//new linkedList
         //adding elements
-        dogsLinkedList.add(new Dogs("HUSKY", 2, true));
-        dogsLinkedList.add(new Dogs("GOLDEN RETRIEVER", 6, true));
-        dogsLinkedList.add(new Dogs("BORDER COLLIE", 4, true));
+        dogsLinkedList.add(new Dog("HUSKY", 2, true));
+        dogsLinkedList.add(new Dog("GOLDEN RETRIEVER", 6, true));
+        dogsLinkedList.add(new Dog("BORDER COLLIE", 4, true));
 
         //iterate out
         usingIterator(dogsLinkedList);
 
         //insert element at the end linkedList
-        dogsLinkedList.addLast(new Dogs("DOBERMAN", 7, false));
+        dogsLinkedList.addLast(new Dog("DOBERMAN", 7, false));
 
         //iterate linkedList starting at the specified position
         usingSpecifyIterator(dogsLinkedList,2);
@@ -68,28 +67,28 @@ public class Dogs {
         usingReverseIterator(dogsLinkedList);
 
         //insert element at the specified position in linkedList
-        dogsLinkedList.add(1, new Dogs("BASENJI", 3, false));
+        dogsLinkedList.add(1, new Dog("BASENJI", 3, false));
 
         //insert element at the first position
-        dogsLinkedList.addFirst(new Dogs("BOXER", 3, false));
+        dogsLinkedList.addFirst(new Dog("BOXER", 3, false));
 
         //insert element at the specified position in linkedList
-        dogsLinkedList.addLast(new Dogs("DALMATIAN", 3, false));
+        dogsLinkedList.addLast(new Dog("DALMATIAN", 3, false));
 
         usingIterator(dogsLinkedList);
 
         //insert element to front of linkedList
-        dogsLinkedList.offerFirst(new Dogs("BOLOGNESE", 5, true));
+        dogsLinkedList.offerFirst(new Dog("BOLOGNESE", 5, true));
 
         //insert element at the end of linkedList
-        dogsLinkedList.offerLast(new Dogs("BRIARD", 5, true));
+        dogsLinkedList.offerLast(new Dog("BRIARD", 5, true));
 
         usingIterator(dogsLinkedList);
 
-        LinkedList<Dogs> anotherDogsLinkedList = new LinkedList<Dogs>();//new linkedList
+        LinkedList<Dog> anotherDogsLinkedList = new LinkedList<Dog>();//new linkedList
         //adding elements
-        anotherDogsLinkedList.add(new Dogs("PEKINGESE", 2, true));
-        anotherDogsLinkedList.add(new Dogs("HAVANESE", 6, true));
+        anotherDogsLinkedList.add(new Dog("PEKINGESE", 2, true));
+        anotherDogsLinkedList.add(new Dog("HAVANESE", 6, true));
 
         //add all anotherLinkedList to linkedList
         dogsLinkedList.addAll(anotherDogsLinkedList);
